@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:900i');
 
 
+
+
 /* ----- Début mise en page accueil ----- */
 .title {
     background-color: black;
@@ -50,43 +52,47 @@
       margin-right: 45px;
   }
   span {
-    transform: skewX(15deg) 
+    transform: skewX(15deg); 
+    background-color: black;
   }
   span:nth-child(2) {
     width: 20px;
     margin-left: 30px;
     top: 12%;
+    background-color: black;
   }
   /**************SVG****************/
-  path.one {
-      transition: 0.4s;
-      transform: translateX(-60%);
-  }
-  path.two {
-      transition: 0.5s;
-      transform: translateX(-30%);
-  }
-  .cta:hover path.three {
-      animation: color_anim 1s infinite 0.2s;
-  }
-  .cta:hover path.one {
-      transform: translateX(0%);
-      animation: color_anim 1s infinite 0.6s;
-  }
-  .cta:hover path.two {
-      transform: translateX(0%);
-      animation: color_anim 1s infinite 0.4s;
-  }
-  /* SVG animations */
-  @keyframes color_anim {
-      0% {
-          fill: white;
-      }
-      50% {
-          fill: rgb(180, 5, 5);
-      }
-      100% {
-          fill: white;
-      }
-  }
+
+ path.one {
+     transition: 0.4s;
+     transform: translateX(-60%);
+ }
+ path.two {
+     transition: 0.5s;
+     transform: translateX(-30%);
+ }
+ .cta:hover path.three {
+     animation: color_anim 1s infinite 0.2s;
+ }
+ .cta:hover path.one {
+     transform: translateX(0%);
+     animation: color_anim 1s infinite 0.6s;
+ }
+ .cta:hover path.two {
+     transform: translateX(0%);
+     animation: color_anim 1s infinite 0.4s;
+ }
+ /* SVG animations */
+ @keyframes color_anim {
+     0% {
+         fill: white;
+     }
+     50% {
+         fill: rgb(180, 5, 5);
+     }
+     100% {
+         fill: white;
+     }
+ }
+
 /* ----- Fin bouton animé ----- */
