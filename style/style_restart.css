@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
+
+
+
+/* ----- Début mise en page accueil ----- */
+* {
+    font-family: 'Poppins', sans-serif;
+    background-color: #222;
+}
+
+.research_bar {
+    color: rgb(180, 5, 5);
+    background-color: #222;
+    text-decoration: dashed;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.menu .button {
+    list-style-type: none;
+    display: inline-block;
+}
+
+
+
+.menu .button :hover {
+    color: #222;
+    background-color: rgb(180, 5, 5);
+    transition: 0.2s all;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.menu .special_button {
+    color: #222;
+    background-color: rgb(180, 5, 5);
+    transition: 0.01s all;
+    margin-left: 10px;
+    margin-right: 10px;
+}

@@ -8,8 +8,18 @@
     </head>
 
     <body>
-        <h1 class="title">Bienvenu au Yatzi Bar !</h1>
+      <!-- Haut de page -->
+      <header>
+        <img src="../image/Yatzy_Bar.jpg">
+        <p>Bienvenu au Yatzi Bar !</p>
+      </header>
+
         <div class="image"></div>
+
+      <!-- Contenu de l'accueil -->
+      <div id="content">
+
+        <!-- Bouton animé -->
         <div id="wrapper">
           <a id="cta" href="page_2.html" target="_blank">
             <span>ENTRER</span>
@@ -24,22 +34,38 @@
             </span> 
           </a>
         </div>
+        <!-- Fin bouton animé -->
         
-      <video id="video"
-      src="../vidéo/cocktail_1.mp4" width="720" autoplay muted></video>
-      <script>
-      const video = document.getElementById("video");
-      const videos = ["../vidéo/cocktail_2.mp4",  "../vidéo/cocktail_3.mp4",  "../vidéo/cocktail_4.mp4" ,  "../vidéo/cocktail_5.mp4" ,  "../vidéo/cocktail_6.mp4" ,  "../vidéo/cocktail_7.mp4" ,  "../vidéo/cocktail_8.mp4"];
+        <div class="right_box">
+          <h1>Démonstration de Coktails</h1>
+          <div class="video_global">
+            <video id="video" src="../vidéo/cocktail_1.mp4" width="480" autoplay muted></video>
+            <script>
+              const video = document.getElementById("video");
+              const videos = ["../vidéo/cocktail_2.mp4",  "../vidéo/cocktail_3.mp4",  "../vidéo/cocktail_4.mp4" ,  "../vidéo/cocktail_5.mp4" ,  "../vidéo/cocktail_6.mp4" ,  "../vidéo/cocktail_7.mp4" ,  "../vidéo/cocktail_8.mp4"];
+            
+              let currentVideoIndex = 0;
+              function changeVideo() {
+                if(currentVideoIndex >= videos.length) currentVideoIndex = 0;
+                video.src = videos[currentVideoIndex++];
+                video.play();
+              }
+            
+              video.addEventListener("ended", changeVideo);
+            </script>
+          </div>
+        </div>
 
-      let currentVideoIndex = 0;
-      function changeVideo() {
-        if(currentVideoIndex >= videos.length) currentVideoIndex = 0;
-        video.src = videos[currentVideoIndex++];
-        video.play();
-      }
+      </div>
 
-      video.addEventListener("ended", changeVideo);
-      </script>
+
+      <!-- Debut pied de page -->
+      <footer>
+        <p>
+          Copyright &copy; Yann Krasinski & Corentin Lafranche - 2022/2023
+        </p>
+      </footer>
+      <!-- Fin pied de page -->
     </body>
 
 </html>

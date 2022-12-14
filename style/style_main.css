@@ -4,9 +4,40 @@
 
 
 /* ----- Début mise en page accueil ----- */
-body {
-    background-color: #222;
+header img {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 940px;
+
 }
+
+#content {
+    background-color: #777;
+}
+
+#content div {
+    display: inline-block;
+    width: 48%;
+}
+
+#content div h1, p, .video_global {
+    margin: 35px;
+}
+
+#content .right_box {
+    background-color: green;
+    
+}
+
+
+
+
+
+
+
+
+
 .title {
     background-color: black;
     font-family: 'Poppins', sans-serif;
@@ -26,7 +57,8 @@ body {
 /* ----- Début bouton animé ----- */
 #wrapper {
     display: flex;
-    justify-content: center;
+    vertical-align: top;
+    background-color: blue;
 
     
   }
