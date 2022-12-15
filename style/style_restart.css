@@ -9,6 +9,10 @@
     background-color: #222;
 }
 
+a {
+    cursor:grab;
+}
+
 .header_image {
     border-radius: 10%;
     padding-top: 5px;
@@ -23,6 +27,13 @@
     padding: 10px;
     margin-left: 10px;
     margin-right: 10px;
+    border-radius: 10%;
+}
+
+#video {
+    border-width: 10px;
+    border-style:double;
+    border-color: rgb(180, 5, 5);
 }
 
 .menu .button {
@@ -33,7 +44,17 @@
 .menu .button :hover {
     color: #222;
     background-color: rgb(180, 5, 5);
+    border-style: groove;
+    border-color: pink;
+    border-bottom-left-radius: 0%;
+    border-top-right-radius: 0%;
     transition: 0.2s all;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+
+.footer_left {
+    padding-top: 15%;
+
 }
