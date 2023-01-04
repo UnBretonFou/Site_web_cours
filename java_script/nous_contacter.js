@@ -1,10 +1,18 @@
-// Récupération des champs du formulaire
+// ===== Récupération des champs du formulaire et de la zone d'affichages des erreurs ===== //
 const form = document.getElementById('contact-form')
-const surnameField = document.getElementById('nom')
-const nameField = document.getElementById('prenom')
-const emailField = document.getElementById('email')
-const phoneField = document.getElementById('telephone')
 const messageField = document.getElementById('motif')
+
+const surnameField = document.getElementById('nom')
+const nameError = document.getElementById('name-error');
+
+const nameField = document.getElementById('prenom')
+const surnameError = document.getElementById('surname-error');
+
+const emailField = document.getElementById('email')
+const emailError = document.getElementById('email-error');
+
+const phoneField = document.getElementById('telephone')
+const telephoneError = document.getElementById('telephone-error');
 
 // Fonction de validation du formulaire
 function validateForm() {
@@ -39,3 +47,7 @@ if (messageField.value.trim() === "") {
     messageField.setCustomValidity("Veuillez saisir votre message.");
     return false;
 }
+
+// ========== Affichage message d'erreur du formulaire ========== //
+
+
