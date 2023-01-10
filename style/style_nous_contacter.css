@@ -1,3 +1,4 @@
-#selection {
-    background-color: rgb(252, 0, 0)170, 131, 131);
+textarea.txt_box {
+    display: inline-block;
+    color: blue;
 }

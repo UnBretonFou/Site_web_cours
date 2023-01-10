@@ -22,8 +22,7 @@
                     </a>
                 </li>
                 <li class="button">
-                    <a class="research_bar" href="../vidéo/easter_egg.mp4" target="_blank">
-                        
+                    <a class="research_bar" href="../vidéo/easter_egg.mp4" target="_blank">                       
                     </a>
                 </li>
                 <li class="button">
@@ -32,14 +31,12 @@
                     </a>
                 </li>
             </ul>
-
         </nav>
 
         <div id="content">
-
             <div class="left_box">
                 <div align="center">
-                    <video id="video" src="../vidéo/cocktail_1.mp4" width="720" autoplay muted></video>
+                    <video id="video" src="../vidéo/cocktail_1.mp4" width="100%" height="100%"autoplay muted></video>
                     <script>
                       const video = document.getElementById("video");
                       const videos = ["../vidéo/cocktail_2.mp4",  "../vidéo/cocktail_3.mp4",  "../vidéo/cocktail_4.mp4" ,  "../vidéo/cocktail_5.mp4" ,  "../vidéo/cocktail_6.mp4" ,  "../vidéo/cocktail_7.mp4" ,  "../vidéo/cocktail_8.mp4"];
@@ -55,24 +52,23 @@
                     </script>                   
                 </div>
             </div>
-
-            <div class="right_box">
-            </div>
-
         
         <!-- Debut pied de page -->
         <footer>
-            <div class="footer_left">
+            <div id="footer">
+                <form>
+                    <label> Nous contacter </label>
+                    <select>
+                        <option value="email"> Par email </option>
+                        <option value="telephone"> Par téléphone </option>
+                        <option value="formulaire"> Par le formulaire </option>
+                    </select>
+                </form><br>
                 <p>
                     Copyright &copy; Yann Krasinski & Corentin Lafranche - 2022/2023
-                </p>
-            </div> 
-            <div class="footer_right">
-                
-            </div> 
-            
+                </p><br>             
+            </div>   
         </footer>
         <!-- Fin pied de page -->
-
     </body>
 </html>
