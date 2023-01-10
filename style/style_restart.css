@@ -57,6 +57,11 @@
     cursor: grab;
 }
 
+#maps {
+    display: inline-block;
+    text-align: center;
+    
+}
 
 #footer {
     text-align: center;
