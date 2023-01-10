@@ -5,17 +5,22 @@
         display: flex;
         justify-content: space-between;
     }
-    
 }
+@media only screen and (max-width: 600px) {
+    .maps-container {
+        order: 1;
+    }
 
-
-
-/* ----- Début mise en page accueil ----- */
+}
 * {
     font-family: 'Poppins', sans-serif;
     background-color: #222;
 }
 
+
+/* ----- Début mise en page accueil ----- */
+
+/* DEBUT HEADER */
 .header_image {
     border-radius: 10%;
     padding-top: 5px;
@@ -27,6 +32,9 @@
     border-right: 50px;
 }
 
+/* FIN HEADER */
+
+/* DEBUT BODY */
 .research_bar {
     color: rgb(180, 5, 5);
     background-color: #222;
@@ -64,23 +72,21 @@
     cursor: grab;
 }
 
-#footer {
-    text-align: center;
-    padding-top: 30%;
-
-}
-
 .parent {
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    margin-top: 100px;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
 }
 
 .maps-container {
     flex: 1;
     display: flex;
     align-items: center;
+    
 }
 .maps {
     border-radius: 10%;
@@ -95,10 +101,15 @@
 
 .zone-texte {
     flex: 1;
+    cursor: default;
 }
 
 .boite-texte {
-    align-items: center;
+    font-variant: small-caps;
+    width: 75%;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
     
 }
 
@@ -106,9 +117,8 @@
     color: white;
     text-align: center;
     list-style-type: none;
-    font-size: x-large;
-    font-style: oblique;
-    
+    font-size: xx-large;
+    font-style: oblique; 
 }
 
 .horaires h2 {
@@ -116,3 +126,40 @@
     margin-bottom: 1px;
     margin-top: 0px;
 }
+
+.WHITE-EG:link:link {
+    text-decoration: none;
+    color: white;
+}
+.WHITE-EG:hover{
+    text-decoration: none;
+    color: white;
+    cursor: default;    
+}
+.WHITE-EG:visited {
+    text-decoration: none;
+    color: white;
+}
+/* FIN BODY */
+
+/* DEBUT FOOTER */
+#footer {
+    text-align: center;
+    padding-top: 25%;
+    cursor: default;
+}
+
+.RED-EG:link {
+    color: rgb(180, 5, 5);
+    text-decoration: none;
+}
+.RED-EG:hover {
+    cursor: default;
+    color: rgb(180, 5, 5);
+    text-decoration: none;
+}
+.RED-EG:visited {
+    color: rgb(180, 5, 5);
+    text-decoration: none;
+}
+/* FIN FOOTER */
