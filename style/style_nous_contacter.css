@@ -9,7 +9,7 @@ label, input[type="text"], #motif {
     border: 1px solid #ccc;
     font-size: 1.2em;
     width: 25%;
-}
+} 
 
 label {
     font-weight: bold;
@@ -99,4 +99,8 @@ textarea {
 .submit-btn:active {
     background-color: navy;
     transform: translateY(3px);
+}
+
+.background-txt {
+    background-color: #ccc;
 }
