@@ -16,6 +16,17 @@ body {
   position: relative;
 }
 
+/* .loupe {
+  position: center;
+  top: 40px;
+  right: 10px;
+} */
+img {
+  
+  width: 25px;
+  height: 25px;
+}
+
 .side-nav {
   position: fixed;
   height: 100vh;
