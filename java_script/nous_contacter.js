@@ -1,53 +1,29 @@
-// ===== Récupération des champs du formulaire et de la zone d'affichages des erreurs ===== //
-const form = document.getElementById('contact-form')
-const messageField = document.getElementById('motif')
-
-const surnameField = document.getElementById('nom')
-const nameError = document.getElementById('name-error');
-
-const nameField = document.getElementById('prenom')
-const surnameError = document.getElementById('surname-error');
-
-const emailField = document.getElementById('email')
-const emailError = document.getElementById('email-error');
-
-const phoneField = document.getElementById('telephone')
-const telephoneError = document.getElementById('telephone-error');
-
-// Fonction de validation du formulaire
-function validateForm() {
-    // Réinitialisation des erreurs
-    surnameField.setCustomValidity('');
-    nameField.setCustomValidity('');
-    emailField.setCustomValidity('');
-    phoneField.setCustomValidity('');
-    messageField.setCustomValidity('');
+function sendEmail() {
+        Email.send({
+    Host : "smtp.gmail.com", //nom du domaine smtp
+    Username : "ton.email@gmail.com",
+    Password : "ton-mot-de-passe",
+    To : "ton.email@gmail.com",
+    From : document.getElementById("email").value, //récupérer l'email de l'expéditeur
+    Subject : "Nouveau contact",
+    Body : "nom" + document.getElementById("nom").value
+        +"<br> prenom" + document.getElementById("prenom").value
+        +"<br> email" + document.getElementById("nom").value
+        +"<br> phone" + document.getElementById("phone").value
+        +"<br> message" + document.getElementById("message").value
+    }).then(
+    message => alert("Message envoyé avec succès")
+    );
 }
+// il faut un serveur smtp c'est pour ça que ça ne fonctionne pas 
 
-// Vérification du nom 
-if (surnameField.ariaValueMax.trim() === "") {
-    surnameField.sutCustomValidity("Veuillez saisir votre nom.");
-    return false;
-}
 
-// Vérification du prénom 
-if (nameField.ariaValueMax.trim() === "") {
-    nameField.sutCustomValidity("Veuillez saisir votre nom.");
-    return false;
-}
 
-// Vérification de l'email
-if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
-    emailField.setCustomValidity("Veuillez saisir une adresse email valide.");
-    return false;
-}
+var body = document.querySelector("body");
 
-// Vérification du massage
-if (messageField.value.trim() === "") {
-    messageField.setCustomValidity("Veuillez saisir votre message.");
-    return false;
-}
-
-// ========== Affichage message d'erreur du formulaire ========== //
-
+document.addEventListener("mousemove", function(event) {
+    var x = event.clientX / window.innerWidth;
+    var y = event.clientY / window.innerHeight;
+    body.style.backgroundPosition = x * 100 + "% " + y * 100 + "%";
+});
 

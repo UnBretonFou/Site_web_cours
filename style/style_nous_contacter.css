@@ -1,106 +1,63 @@
-body {
-    background-color: #f2f2f2;
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-label, input[type="text"], #motif {
-    padding: 0.5em;
-    margin-bottom: 1em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1.2em;
-    width: 25%;
-} 
+.container {
+    width: 100%;
+    height: 100vh;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-label {
-    font-weight: bold;
+    background-image: url(../image/cocktails_background.jpg);
+    background-size: cover;
+
 }
 
-input[type="text"] {
-    padding: 0.5em;
-    margin-bottom: 1em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+form  {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    border-style: double;
+    border-width: 10px;
+    border-color: #222;
 }
 
-#motif {
-    margin-bottom: 1em;
-    padding: 0.5em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+form h3 {
+    color: rgb(180, 5, 5);
+    font-weight: 800;
+    margin-bottom: 20px;
 }
 
-textarea {
-    margin-bottom: 1em;
-    padding: 0.5em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+form input, form textarea {
+    border: 0;
+    margin: 10px 0;
+    padding: 20px;
+    outline: none;
+    background: #f5f5fa;
+    font-size: 16px;
 }
 
-.submit-btn {
-    padding: 0.5em 1em;
-    background-color: blue;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    font-weight: bold;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.submit-btn:hover {
-    background-color: darkblue;
+form button {
+    padding: 15px;
+    background:rgba(180, 5, 5, 0.66);
+    color: #222;
+    font-size: 18px;
+    border: 0;
+    outline: none;
     cursor: pointer;
-}
+    width: 150px;
+    margin: 20px auto 0;
+    border-radius: 30px;
 
-.submit-btn:active {
-    background-color: navy;
-    transform: translateY(3px);
-}
-
-label {
-    font-weight: bold;
-}
-
-input[type="text"] {
-    padding: 0.5em;
-    margin-bottom: 1em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-#motif {
-    margin-bottom: 1em;
-    padding: 0.5em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-textarea {
-    margin-bottom: 1em;
-    padding: 0.5em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.submit-btn {
-    padding: 0.5em 1em;
-    background-color: blue;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    font-weight: bold;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.submit-btn:hover {
-    background-color: darkblue;
-    cursor: pointer;
-}
-
-.submit-btn:active {
-    background-color: navy;
-    transform: translateY(3px);
-}
-
-.background-txt {
-    background-color: #ccc;
 }

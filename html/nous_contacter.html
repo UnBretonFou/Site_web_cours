@@ -5,29 +5,22 @@
         <title>Contact</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../style/style_nous_contacter.css">
-        <script src="../java_script/nous_contacter.js"></script>
     </head>
 
 
     <body>
-        <label for="Nom" style="color: #222;"> Nom : </label>
-        <input class="background-txt" type="text" placeholder="Votre Nom"><br><br>
-        <label for="Prénom" style="color: #222;"> Prénom  :</label>
-        <input type="text" placeholder="Votre prénom"><br><br>
-        <label for="email" style="color: #222;"> Email :</label>
-        <input type="text" placeholder="Votre mail"><br><br>
-        <label for="téléphone" style="color: #222;"> Téléphone : </label>
-        <input type="text" placeholder="Votre téléphone"><br><br>
-        <label for="motif" style="color: #222;"> Motif : </label>
-        <select id="text" name="motif">
-            <option value="Je me lève !"> Je me lève ! </option>
-            <option value="Et je te bouscule !"> Et je te bouscule ! </option>
-            <option value="Comme d'habitude !"> Comme d'habitude ! </option>
-        </select><br><br>
-        <textarea style="position: inherit;" cols="60" rows="20"></textarea><br>
-        <button type="submit" class="submit-btn">Envoyer</button>
-
-
-        <!-- <textarea style="position: inherit;" cols="60" rows="20"></textarea> // zone de texte -->
+        <div class="container">
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h3> FORMULAIRE DE CONTACT </h3>
+                <input type="text" id="nom" placeholder="Votre nom" required>
+                <input type="text" id="prenom" placeholder="Votre prénom" required>
+                <input type="email" id="email" placeholder="Votre email" required>
+                <input type="text" id="phone" placeholder="Votre téléphone" required>
+                <textarea id="message" cols="30" rows="5" placeholder="Comment pouvons nous vous aider ?"></textarea>
+                <button type="submit"> Envoyer </button>
+                
+            </form>
+        </div>
+        <script src="https://smtpjs.com/v3/smtp.js" src="../java_script/nous_contacter.js"></script>
     </body>
 </html>
