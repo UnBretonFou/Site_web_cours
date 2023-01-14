@@ -53,6 +53,13 @@
     border-color: rgb(180, 5, 5);
 }
 
+.left-svg {
+    float: left;
+}
+.right-svg {
+    float: right;
+}
+
 
 .menu .button {
     list-style-type: none;
@@ -88,12 +95,11 @@
     align-items: center;
     
 }
+
 .maps {
     border-radius: 10%;
-    border-color: rgba(180, 5, 5, 0.40);
-    border-width: 5px;
+    border-width: 50px;
     box-sizing: 10px;
-    box-shadow: 20%;
     margin: auto;
     max-width: 720px;
     max-height: 420px;
@@ -110,7 +116,6 @@
     padding: 10px;
     margin: auto;
     text-align: center;
-    
 }
 
 .horaires {
@@ -145,7 +150,7 @@
 /* DEBUT FOOTER */
 #footer {
     text-align: center;
-    padding-top: 25%;
+    padding-top: 5%;
     cursor: default;
 }
 
