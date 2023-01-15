@@ -9,5 +9,7 @@ parallax.addEventListener('mousemove', e => {
     //Get the x,y mouse coordinates
     const x = e.clientX;
     const y = e.clientY;
-    front.style.transform = 'translate(${x / sFront} % ${y / sFront})';
-}
+    front.style.transform = 'translate(${x / sFront}%, ${y / sFront}$)';
+
+    back.style.transform = 'translate(${x / sBack}%, ${y / sBack}%)';
+});
