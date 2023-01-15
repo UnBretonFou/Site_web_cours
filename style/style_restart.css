@@ -53,14 +53,6 @@
     border-color: rgb(180, 5, 5);
 }
 
-.left-svg {
-    float: left;
-}
-.right-svg {
-    float: right;
-}
-
-
 .menu .button {
     list-style-type: none;
     display: inline-block;

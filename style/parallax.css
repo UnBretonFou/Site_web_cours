@@ -1,0 +1,137 @@
+
+
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+/* --- DEBUT PREMIER PLAN --- */
+.presentation:visited {
+    color: rgb(180, 5, 5);
+    text-decoration: none;
+}
+.presentation:hover {
+    cursor: default;
+    color: #222;
+    text-decoration: none;
+}
+.presentation:link {
+    color: rgb(180, 5, 5);
+    text-decoration: none;
+}
+
+
+.parallax {
+    min-height: 100vh;
+    background: linear-gradient(#333, #111);
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax h1 {
+    margin: 0;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    line-height: 1.4em;
+}
+
+.front-image, .back-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.front-image {
+    z-index: 1;
+}
+
+.back-image {
+    z-index: 0;
+}
+
+.front-image img, .back-image img {
+    position: absolute;
+    border-radius: 5%;
+    border-style: groove;
+    border-color: rgba(180, 5, 5, 0.1);
+}
+
+.front-image img {
+    box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.5);
+    max-width: 220px;
+}
+
+.back-image img {
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+    max-width: 380px;
+}
+
+.front-image img:nth-child(1) {
+    top: 2%;
+    left: 24%;
+    width: 16%;
+}
+
+.front-image img:nth-child(2) {
+    top: 55%;
+    left: 1%;
+    width: 13%;
+}
+
+.front-image img:nth-child(3) {
+    bottom: 2%;
+    left: 43%;
+    width: 14%;
+}
+
+.front-image img:nth-child(4) {
+    bottom: 20%;
+    right: 2.5%;
+    width: 12%;
+}
+
+.front-image img:nth-child(5) {
+    top: 27%;
+    right: 24%;
+    width: 11%;
+}
+/* --- FIN PREMIER PLAN --- */
+
+/* --- DEBUT SECOND PLAN --- */
+.back-image img:nth-child(1) {
+    top: 3%;
+    right: 1%;
+    width: 30%;
+}
+
+.back-image img:nth-child(2) {
+    bottom: 5%;
+    right: 9%;
+    width: 32%;
+}
+
+.back-image img:nth-child(3) {
+    top: 20%;
+    left: 5%;
+    width: 34%;
+}
+
+.back-image img:nth-child(4) {
+    bottom: 15%;
+    left: 22.8%;
+    width: 25%;
+}
+
+.back-image img:nth-child(5) {
+    top: 5%;
+    left: 50%;
+}
