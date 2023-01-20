@@ -229,6 +229,10 @@ img {
   opacity: 0.8;
 }
 
+.zone-text {
+  color: rgb(180, 5, 5);
+}
+
 /* Stylez le bouton pour annuler */
 .form-container .cancel {
   background-color: #cc0000;
