@@ -184,7 +184,7 @@ img {
   left: 45%;
   top: 5%;
   transform: translate(-45%, 5%);
-  border: 2px solid rgba(180, 5, 5);
+  border: 2px solid rgb(180, 5, 5);
   z-index: 9;
   border-radius: 2.5%;
 }
@@ -238,5 +238,4 @@ img {
 .form-container .btn:hover,
 .open-button:hover {
   opacity: 1;
-  colo
 }
