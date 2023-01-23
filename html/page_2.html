@@ -20,28 +20,28 @@
             <h2>Chercher un cocktail</h2>
             <ul>
               <li>
-                <a >Par son nom</a>
-                <form class="recherche" action="#" method="get">
-                  <input type="text" class="barre de recherche"
-                    placeholder="Saisir un nom de cocktail" />
+                <form></form>
+                  <label for="name">Par son nom</label>
+                  <input type="text" id="name" name="name" placeholder="Saisir un nom de cocktail" />
+                  <button type="submit" id="submit"> Rechercher </button>
                 </form>
               </li>
               <li>
-                <a >Par un ingrédient</a>
-                <form class="recherche" action="#" method="get">
-                  <input type="text" class="barre de recherche"
-                    placeholder="Saisir un ingrédients" />
+                <form></form>
+                  <label for="ingrediet">Par un ingrédient</label>
+                  <input type="text" placeholder="Saisir un ingrédients" />
+                  <button type="submit" id="submit"> Rechercher </button>
                 </form>
               </li>
               <li>
-                <a >Avec ou sans alcool</a>
-                <form class="recherche" action="#" method="get">
-                  <input type="text" class="barre de recherche"
-                    placeholder="Avec ou sans alcool ?" />
-                </form>
+                <div class="modal">
+                  <div class="modal-content">
+                    <!-- Cocktail information will be added here -->
+                  </div>
+                </div>
               </li>
               <li>
-                <a id="random-cocktail" onclick="openCocktailPopup()">Cocktails aléatoire</a>
+                <a id="random-cocktail" onclick="getRandomCocktail()">Cocktails aléatoire</a>
               </li>
             </ul>
           </div>

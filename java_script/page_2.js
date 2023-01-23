@@ -7,27 +7,13 @@ function closeForm() {
 }
 
 
-/* --- COKTAIL PAR SON NOM --- */
-function getRandomCocktail() {
-  fetch('www.thecocktaildb.com/api/json/v1/1/search.php?s')
-  .then(response => response.json())
-  .then(data => {
-    // Extraire les infos de l'API
-    const cocktail = data.drinks[0];
-    console.log(data);
-    const name = cocktail.strDrink;
-    const instructions = cocktail.strInstructions;
-    const imageURL = cocktail.strDrinkThumb;
+/* --- RECHERHCE PAR SON NOM --- */
+// const input = document.getElementById("name");
+// const submit = document.getElementById("submit");
 
-    // Création de la nouvelle fenêtre
-    let newWindow = window.open("", "Cocktail aléatoire", "height=500", "widht=500");
-
-    // Ajout des informations dans la fenêtre
-    newWindow.document.write('<h1>' + name + '</h1>');
-    newWindow.document.write('<img src="' + imageURL + '" alt="' + name + '">');
-    newWindow.document.write('<p>' + instructions + '</p>')
-  });
-}
+// submit.addEventListener("click", function(event){
+//   event.
+// })
 
 /* --- COKTAIL ALEATOIRE --- */
 function getRandomCocktail() {
@@ -44,10 +30,28 @@ function getRandomCocktail() {
     // Création de la nouvelle fenêtre
     let newWindow = window.open("", "Cocktail aléatoire", "height=500", "widht=500");
 
+    // Créer le lien CSS
+    var link = newWindow.document.createElement("link");
+
+    // Realation CSS
+    link.rel = "stylesheet";
+    link.href = "C:/Users/CorentinLAFRANCHE/Github_depot/Site_web_cours/style/style_page_2.css";
+
+    // ajout dans la balise head
+    newWindow.document.head.appendChild(link);
+
+    // crée une div
+    let container = document.createElement('div');
+
+    // ajoute le contenu à la div
+    container.classList.add('cocktail-card');
+
     // Ajout des informations dans la fenêtre
-    newWindow.document.write('<h1>' + name + '</h1>');
-    newWindow.document.write('<img src="' + imageURL + '" alt="' + name + '">');
-    newWindow.document.write('<p>' + instructions + '</p>')
+    container.innerHTML = '<h1>' + name + '</h1>' +
+    '<img src="' + imageURL + '" alt="' + name + '">' +
+    '<p>' + instructions + '</p>';
+
+    newWindow.document.body.appendChild(container);
   });
 }
 
