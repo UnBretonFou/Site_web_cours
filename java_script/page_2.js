@@ -27,31 +27,31 @@ function getRandomCocktail() {
     const instructions = cocktail.strInstructions;
     const imageURL = cocktail.strDrinkThumb;
 
-    // Création de la nouvelle fenêtre
-    let newWindow = window.open("", "Cocktail aléatoire", "height=500", "widht=500");
+   // Création de la nouvelle fenêtre
+   let newWindow = window.open("", "Cocktail aléatoire", "max-height=100", "max-widht=250");
 
-    // Créer le lien CSS
-    var link = newWindow.document.createElement("link");
+   // Ajout des balises HTML de base
+   newWindow.document.write('<!DOCTYPE html><html><head></head><body></body></html>');
 
-    // Realation CSS
-    link.rel = "stylesheet";
-    link.href = "C:/Users/CorentinLAFRANCHE/Github_depot/Site_web_cours/style/style_page_2.css";
+   var link = newWindow.document.createElement("link");
+
+   // Realation CSS
+   link.rel = "stylesheet";
+   link.href = "../style/style_page_2.css";
 
     // ajout dans la balise head
     newWindow.document.head.appendChild(link);
 
-    // crée une div
     let container = document.createElement('div');
 
     // ajoute le contenu à la div
-    container.classList.add('cocktail-card');
+    container.classList.add('cocktail-dom');
 
     // Ajout des informations dans la fenêtre
     container.innerHTML = '<h1>' + name + '</h1>' +
-    '<img src="' + imageURL + '" alt="' + name + '">' +
-    '<p>' + instructions + '</p>';
-
+    '<img class="image-dom" src="' + imageURL + '" alt="' + name + '">' +
+    '<p class=text-dom>' + instructions + '</p>';
+ 
     newWindow.document.body.appendChild(container);
   });
-}
-
+ }
