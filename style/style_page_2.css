@@ -8,7 +8,7 @@
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 0; 
 }
 
 body {
@@ -237,14 +237,30 @@ img {
   opacity: 1;
 }
 
-/* --- Style fenêtre pop-up _ DOM --- */
+/* ===== Style fenêtre pop-up _ DOM ==== */
+
+#parent-container {
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+
+.cocktail-dom {
+  border-radius: 10%;
+  
+}
+
 .cocktail-dom h1 {
   color: rgb(180, 5, 5);
   font-family: 'Poppins';
   font-size: 101px;
   font-style: oblique;
   position: relative;
-  left: 24%;
+  left: 50%;
   letter-spacing: 1.5px;
 }
 

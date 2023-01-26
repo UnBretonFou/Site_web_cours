@@ -42,16 +42,23 @@ function getRandomCocktail() {
     // ajout dans la balise head
     newWindow.document.head.appendChild(link);
 
-    let container = document.createElement('div');
+    let parentContainer = document.createElement('div');
+    parentContainer.id = "parent-container";
 
+    let container_img = document.createElement('div');
     // ajoute le contenu à la div
-    container.classList.add('cocktail-dom');
-
+    container_img.classList.add('cocktail-dom');
     // Ajout des informations dans la fenêtre
-    container.innerHTML = '<h1>' + name + '</h1>' +
-    '<img class="image-dom" src="' + imageURL + '" alt="' + name + '">' +
-    '<p class=text-dom>' + instructions + '</p>';
+    container_img.innerHTML = '<h1>' + name + '</h1> <img class="image-dom" src="' + imageURL + '" alt="' + name + '">';
  
-    newWindow.document.body.appendChild(container);
+    let container_txt = document.createElement('div');
+    container_txt.classList.add('cocktail-dom');
+    container_txt.innerHTML = '<p class=text-dom>' + instructions + '</p>';
+    
+    parentContainer.appendChild(container_img);
+    parentContainer.appendChild(container_txt);
+    newWindow.document.body.appendChild(parentContainer);
   });
  }
+
+ 
