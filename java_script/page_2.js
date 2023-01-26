@@ -8,12 +8,26 @@ function closeForm() {
 
 
 /* --- RECHERHCE PAR SON NOM --- */
-// const input = document.getElementById("name");
-// const submit = document.getElementById("submit");
+function getCocktailByName() {
+  fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=`)
+  .then(response => response.json())
+  .then(data => {
+    const result = data.drinks[0];
+    let windowContent = `<h2>${result.strDrink}</h2>`; 
+    windowContent += `<img src="${result.strDrinkThumb}" alt="${result.strDrink}">`;
+    windowContent += `<p>${result.strInstructions}</p>`;
+    windowContent += '<ul>';
+    for (let i = 1; i <= 15; i++) {
+      if (result[`strIngredient${i}`]) {
+        windowContent += `<li>${result[`strIngredient${i}`]} - ${result[`strMeasure${i}`]}</li>`;
+      }
+    }
+    windowContent += '</ul>';
+    const newWindow = window.open("", "Cocktail Info", "height=500, width= 500");
+    newWindow.document.write(windowContent);
+    console.long(result)
+  })};
 
-// submit.addEventListener("click", function(event){
-//   event.
-// })
 
 /* --- COKTAIL ALEATOIRE --- */
 function getRandomCocktail() {
@@ -49,7 +63,7 @@ function getRandomCocktail() {
     // ajoute le contenu à la div
     container_img.classList.add('cocktail-dom');
     // Ajout des informations dans la fenêtre
-    container_img.innerHTML = '<h1>' + name + '</h1> <img class="image-dom" src="' + imageURL + '" alt="' + name + '">';
+    container_img.innerHTML = '<img class="image-dom" src="' + imageURL + '" alt="' + name + '">';
  
     let container_txt = document.createElement('div');
     container_txt.classList.add('cocktail-dom');
@@ -60,5 +74,3 @@ function getRandomCocktail() {
     newWindow.document.body.appendChild(parentContainer);
   });
  }
-
- 
