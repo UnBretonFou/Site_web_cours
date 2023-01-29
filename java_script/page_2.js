@@ -1,76 +1,99 @@
-function openForm() {
-    document.getElementById("popupForm").style.display = "block";
-}
+/* --- check chargement du fichier --- */
+console.info('js/cocktails.js loaded');
 
-function closeForm() {
-    document.getElementById("popupForm").style.display = "none";
-}
-
-
-/* --- RECHERHCE PAR SON NOM --- */
-function getCocktailByName() {
-  fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=`)
-  .then(response => response.json())
-  .then(data => {
-    const result = data.drinks[0];
-    let windowContent = `<h2>${result.strDrink}</h2>`; 
-    windowContent += `<img src="${result.strDrinkThumb}" alt="${result.strDrink}">`;
-    windowContent += `<p>${result.strInstructions}</p>`;
-    windowContent += '<ul>';
-    for (let i = 1; i <= 15; i++) {
-      if (result[`strIngredient${i}`]) {
-        windowContent += `<li>${result[`strIngredient${i}`]} - ${result[`strMeasure${i}`]}</li>`;
-      }
-    }
-    windowContent += '</ul>';
-    const newWindow = window.open("", "Cocktail Info", "height=500, width= 500");
-    newWindow.document.write(windowContent);
-    console.long(result)
-  })};
+document.addEventListener('prechange', function(event) {
+  document.querySelector('ons-toolbar .center')
+    .innerHTML = event.tabItem.getAttribute('label');
+});
 
 
 /* --- COKTAIL ALEATOIRE --- */
-function getRandomCocktail() {
-  fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
-  .then(response => response.json())
-  .then(data => {
-    // Extraire les infos de l'API
-    const cocktail = data.drinks[0];
-    console.log(data);
-    const name = cocktail.strDrink;
-    const instructions = cocktail.strInstructions;
-    const imageURL = cocktail.strDrinkThumb;
+function getRandomCocktail(){
+	fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
 
-   // Création de la nouvelle fenêtre
-   let newWindow = window.open("", "Cocktail aléatoire", "max-height=100", "max-widht=250");
-
-   // Ajout des balises HTML de base
-   newWindow.document.write('<!DOCTYPE html><html><head></head><body></body></html>');
-
-   var link = newWindow.document.createElement("link");
-
-   // Realation CSS
-   link.rel = "stylesheet";
-   link.href = "../style/style_page_2.css";
-
-    // ajout dans la balise head
-    newWindow.document.head.appendChild(link);
-
-    let parentContainer = document.createElement('div');
-    parentContainer.id = "parent-container";
-
-    let container_img = document.createElement('div');
-    // ajoute le contenu à la div
-    container_img.classList.add('cocktail-dom');
-    // Ajout des informations dans la fenêtre
-    container_img.innerHTML = '<img class="image-dom" src="' + imageURL + '" alt="' + name + '">';
- 
-    let container_txt = document.createElement('div');
-    container_txt.classList.add('cocktail-dom');
-    container_txt.innerHTML = '<p class=text-dom>' + instructions + '</p>';
-    
-    parentContainer.appendChild(container_img);
-    parentContainer.appendChild(container_txt);
-    newWindow.document.body.appendChild(parentContainer);
+      // Examine the text in the response
+      response.json().then(function(data) {
+        //console.log(data);
+        displayRandomCocktail(data);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
   });
- }
+}
+
+getRandomCocktail();
+
+function displayRandomCocktail(cocktail){
+	console.log(cocktail.drinks[0]);
+
+	let drinkSection = document.querySelector('#drink-section');
+	drinkSection.innerHTML = '';
+
+	let drinkName = document.createElement('h2');
+	drinkName.innerHTML = cocktail.drinks[0].strDrink;
+
+	drinkSection.appendChild(drinkName);
+
+	let img = document.createElement('img');
+	img.src = cocktail.drinks[0].strDrinkThumb;
+
+	drinkSection.appendChild(img);
+
+	for(let i=1; i<16; i++){
+		console.log();
+
+		if(cocktail.drinks[0][`strIngredient${i}`] == null || cocktail.drinks[0][`strIngredient${i}`] == '' ){
+			break;
+		}
+
+		let ingredient = document.createElement('ons-list-item');
+		ingredient.innerHTML = cocktail.drinks[0][`strMeasure${i}`] + ': ' + cocktail.drinks[0][`strIngredient${i}`];
+
+		drinkSection.appendChild(ingredient);
+	}
+
+	let card = document.createElement('ons-card');
+	card.innerHTML = cocktail.drinks[0].strInstructions;
+
+	drinkSection.appendChild(card);
+
+}
+
+
+
+/* --- refresh pour un nouveau cocktail --- */
+ons.ready(function() {
+  var pullHook = document.getElementById('pull-hook');
+
+  pullHook.addEventListener('changestate', function(event) {
+    var message = '';
+
+    switch (event.state) {
+      case 'initial':
+        message = 'Pull to refresh';
+        getRandomCocktail();
+        break;
+      case 'preaction':
+        message = 'Release';
+        break;
+      case 'action':
+        message = 'Loading...';
+        break;
+    }
+
+    pullHook.innerHTML = message;
+  });
+
+  pullHook.onAction = function(done) {
+    setTimeout(done, 1000);
+  };
+});

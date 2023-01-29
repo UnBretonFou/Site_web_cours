@@ -1,0 +1,21 @@
+@media (max-width: 10px) {
+    width: 100%;
+}
+@media (max-height: 100px) {
+    width: 100%;
+}
+
+h1{
+	width: 100%;
+	text-align: center;
+}
+
+h2 {
+    width: 100%;
+	text-align: center;  
+}
+
+#drink-section img{
+	width: 100%;
+	height: auto;
+}
