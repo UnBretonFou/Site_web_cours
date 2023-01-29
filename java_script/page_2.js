@@ -6,6 +6,15 @@ document.addEventListener('prechange', function(event) {
     .innerHTML = event.tabItem.getAttribute('label');
 });
 
+/* --- POPUP CONNEXION ---*/
+function openForm() {
+  document.getElementById("popupForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("popupForm").style.display = "none";
+}
+
 
 /* --- COKTAIL ALEATOIRE --- */
 function getRandomCocktail(){
@@ -13,7 +22,7 @@ function getRandomCocktail(){
   .then(
     function(response) {
       if (response.status !== 200) {
-        console.log('Looks like there was a problem. Status Code: ' +
+        console.log("Il semblerait qu'il y est un problème : " +
           response.status);
         return;
       }
