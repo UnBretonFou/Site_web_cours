@@ -16,7 +16,7 @@ function closeForm() {
 }
 
 
-/* --- COKTAIL ALEATOIRE --- */
+/* ===== DEBUT COKTAIL ALEATOIRE ===== */
 function getRandomCocktail(){
 	fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
   .then(
@@ -77,8 +77,6 @@ function displayRandomCocktail(cocktail){
 
 }
 
-
-
 /* --- refresh pour un nouveau cocktail --- */
 ons.ready(function() {
   var pullHook = document.getElementById('pull-hook');
@@ -106,3 +104,4 @@ ons.ready(function() {
     setTimeout(done, 1000);
   };
 });
+/* ===== FIN COKTAIL ALEATOIRE ===== */

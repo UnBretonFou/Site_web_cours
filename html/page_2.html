@@ -2,9 +2,10 @@
 <html>
   <head>
       <meta charset="UTF-8" />
-      <meta http-equiv="X-UQ-Compatible" content="IE-edge" />
       <title> Menu deroulant test</title>
       <link rel="stylesheet" href="../style/style_page_2.css"/>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <link rel="shortcut icon" type="image/png" href="../image/favicon.png"/>
   </head>
   <body>
       <!-- Barre de navigation -->
@@ -30,39 +31,27 @@
             <div class="sub-nav">
               <h2>Chercher un cocktail</h2>
               <ul>
-                <li>
-                  <div class="search-container">
-                    <form>
-                      <div class="search-container">
-                        <label for="name">Par son nom</label>
-                        <input type="text" id="user-inp"  placeholder="Saisir un nom de cocktail"/>
-                        <button id="search-btn">Rechercher</button>
-                      </div>
-                    </form>
-                  </div>
-                </li>
-                <li>                  
-                  <form>
-                    <div class="search-container">
-                      <label for="ingredient">Par un ingrédient</label>
-                      <input type="text" placeholder="Saisir un ingrédients"/>                    
-                      <button type="submit"> Rechercher </button>
-                    </div>
-                  </form>
-                </li>
-                <li>
-                  <div class="search-container">
-                    <form>
-                      <div class="search-container">
-                        <label for="alcool-ss-Alcool">Avec ou sans alcool</label>
-                        <input type="text" placeholder="Avec ou sans alcool ?" />
-                        <button type="submit" id="submit"> Rechercher </button>
-                      </div>
-                    </form>
-                  </div>
+                <li>                    
+                  <a id="random-cocktail" href="../html/par-son-nom.html" target="_blank">Par son nom</a>                    
                 </li>
                 <li>
                   <a id="random-cocktail" href="../html/random_cocktails.html" target="_blank">Cocktails aléatoire</a> 
+                </li>
+                <li>                                   
+                  <div class="search-container">
+                    <label for="ingredient">Par un ingrédient</label>
+                    <input type="text" placeholder=" Saisir un ingrédients"/>                    
+                    <button type="submit"> Rechercher </button>
+                  </div>                  
+                </li>
+                <li>
+                  <div class="search-container">                  
+                    <div class="search-container">
+                      <label for="alcool-ss-Alcool">Avec ou sans alcool</label>
+                      <input type="text" placeholder=" Avec ou sans alcool ?" />
+                      <button type="submit" id="submit"> Rechercher </button>
+                    </div>                  
+                  </div>
                 </li>
               </ul>
             </div>
@@ -84,15 +73,15 @@
               <ul>
                 <li>
                   <a href="../html/nous_contacter.html" target="_blank">Nous contacter</a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/bartendersportal/" target="_blank">Instagram</a>
-                </li>
+                </li>                
                 <li>
                   <a href="https://www.linkedin.com/in/corentin-lafranche-585546182/" target="_blank">Linkedin - Corentin</a>
                 </li>
                 <li>
                   <a href="https://www.linkedin.com/in/yann-krasinski-3aab41260/" target="_blank">Linkedin - Yann</a>
+                </li>
+                <li>
+                  <a href="../image/lama_troll.jpg" target="_blank">Instagram</a>
                 </li>
               </ul>
             </div>
@@ -143,7 +132,7 @@
                     <div class="open-btn">
                       <button class="open-button" onclick="openForm()"><strong> Connexion - Admin </strong></button>
                     </div>
-                  </li><br>
+                  </li>
                   <li>
                     <div class="open-btn">
                       <button class="open-button" onclick="openForm()"><strong> Connexion - Client </strong></button>
@@ -154,8 +143,6 @@
           </div>
         </div>
       </nav>
-      <!-- Div recherche cocktail par son nom -->
-      <div id="cocktail-output"></div>
       <!-- Fenêtre Popup -->
       <div class="login-popup">
         <div class="form-popup" id="popupForm">
@@ -174,12 +161,13 @@
           </form>
         </div>
       </div>
+      <!-- Qui sommes nous ? -->
       <main class="main-content">
         <h1>Qui sommes nous ?</h1><br>
         <p>
           <span style="font-weight: bold; color: rgb(180, 5, 5);">Nous sommes</span> deux étudiant (Yann et Corentin).<br>
           Avec comme projet de fondé un site internet en html, css et javascript <br>
-          avec comme support une api de cocktails (cf Qr code).<br>
+          avec comme support une api de cocktails (cf. QR code).<br>
           Il y aura différente options notament : une recherche de cocktail par nom, par ingrédients, par la première lettres mais également un <br>
           générateur de cocktail aléatoire.<br>
           Bien evidemment il n'est pas prévu à des fin <span style="font-weight: bold; color: rgb(180, 5, 5);">non-commercial</span>. 
@@ -187,7 +175,10 @@
         </p>
         <img src="../image/frame.png">
       </main>
-      </div>
+    <script src="../java_script/page_2.js"></script>
+    <script src="../test/script.js"></script>
+    <!-- Div recherche cocktail par son nom -->
+    
+    <div id="result"></div>
   </body>
-  <script src="../java_script/page_2.js"></script>
 </html>

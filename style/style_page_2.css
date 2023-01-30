@@ -132,7 +132,7 @@ img {
 .main-content h1 {
   font-family: 'Poppins';
   text-align: center;
-  margin: 2% 0 0 0;
+  margin: 5% 0 0 0;
   font-size: 40px;
 }
 
@@ -148,9 +148,9 @@ img {
 .main-content img {
   display: flex;
 	align-items: center;
-	margin: 80px auto auto auto;
-  width: 20%;
-  height: 20%;
+	margin: 35px auto auto auto;
+  width: 400px;
+  height: 400px;
 }
 
 /* ===== DEBUT POP-UP CONNEXION ===== */
@@ -246,6 +246,27 @@ img {
 /* ===== Cocktail par son nom ===== */
 .search-container {
   display: grid;
+  font-size: 1em;
+  padding: 0.6em 0.3em;
+  border: none;
+  outline: none;
+  color: #fff;
 }
 
+.search-container input {
+  color: #000;
+  border: none;
+  outline: none;
+}
+
+.search-container button {
+  margin-top: 2.5px;
+  font-size: 1em;
+  border-radius: 2em;
+  background-color: rgb(180, 5, 5);
+  border: none;
+  outline: none;
+  color: #ffffff;
+  cursor: pointer;
+}
 /* https://codingartistweb.com/2022/07/cocktail-app-with-javascript/ */
