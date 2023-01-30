@@ -16,10 +16,9 @@
 }
 
 .kit-container {
-  flex: 1;
-  display: flex;
   align-items: center;
-  
+  margin-left: 100px;
+  margin-top: 150px;
 }
 .kit-cocktail {
   border-radius: 10%;
@@ -33,13 +32,13 @@
 .tips-container {
   flex: 1;
   cursor: default;
+  align-items: center;
 }
 
 .boite-texte {
   font-variant: small-caps;
   width: 75%;
-  padding: 10px;
-  margin: auto;
+  padding: 100px;
   text-align: center;
 }
 
@@ -55,4 +54,12 @@
   color: rgb(180, 5, 5);
   margin-bottom: 1px;
   margin-top: 0px;
+  font-size: 35px;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(180, 5, 5);
+  margin-top: 2%;
+  font-size: 50px;
 }

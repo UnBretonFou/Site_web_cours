@@ -38,7 +38,6 @@ function getRandomCocktail(){
     console.log('Fetch Error :-S', err);
   });
 }
-
 getRandomCocktail();
 
 function displayRandomCocktail(cocktail){
@@ -77,31 +76,90 @@ function displayRandomCocktail(cocktail){
 
 }
 
-/* --- refresh pour un nouveau cocktail --- */
-ons.ready(function() {
-  var pullHook = document.getElementById('pull-hook');
+// /* --- refresh pour un nouveau cocktail --- */
+// ons.ready(function() {
+//   var pullHook = document.getElementById('pull-hook');
 
-  pullHook.addEventListener('changestate', function(event) {
-    var message = '';
+//   pullHook.addEventListener('changestate', function(event) {
+//     var message = '';
 
-    switch (event.state) {
-      case 'initial':
-        message = 'Pull to refresh';
-        getRandomCocktail();
-        break;
-      case 'preaction':
-        message = 'Release';
-        break;
-      case 'action':
-        message = 'Loading...';
-        break;
-    }
+//     switch (event.state) {
+//       case 'initial':
+//         message = 'Pull to refresh';
+//         getRandomCocktail();
+//         break;
+//       case 'preaction':
+//         message = 'Release';
+//         break;
+//       case 'action':
+//         message = 'Loading...';
+//         break;
+//     }
 
-    pullHook.innerHTML = message;
-  });
+//     pullHook.innerHTML = message;
+//   });
 
-  pullHook.onAction = function(done) {
-    setTimeout(done, 1000);
-  };
-});
+//   pullHook.onAction = function(done) {
+//     setTimeout(done, 1000);
+//   };
+// });
 /* ===== FIN COKTAIL ALEATOIRE ===== */
+
+
+let result = document.getElementById("result");
+let searchBtn = document.getElementById("search-btn");
+let url = "https://thecocktaildb.com/api/json/v1/1/search.php?s=";
+let getInfo = () => {
+  let userInp = document.getElementById("user-inp").value;
+  if (userInp.length == 0) {
+    result.innerHTML = `<h3 class="msg">Veuillez saisir le nom d'un cocktail</h3>`;
+  } else {
+    fetch(url + userInp)
+      .then((responses) => responses.json())
+      .then((datas) => {
+        document.getElementById("user-inp").value = "";
+        console.log(datas);
+        console.log(datas.drinks[0]);
+        let myDrink = datas.drinks[0];
+        console.log(myDrink.strDrink);
+        console.log(myDrink.strDrinkThumb);
+        console.log(myDrink.strInstructions);
+        let count = 1;
+        let ingredients = [];
+        for (let i in myDrink) {
+          let ingredient = "";
+          let measure = "";
+          if (i.startsWith("strIngredient") && myDrink[i]) {
+            ingredient = myDrink[i];
+            if (myDrink[`strMeasure` + count]) {
+              measure = myDrink[`strMeasure` + count];
+            } else {
+              measure = "";
+            }
+            count += 1;
+            ingredients.push(`${measure} ${ingredient}`);
+          }
+        }
+        console.log(ingredients);
+        result.innerHTML = `
+      <img src=${myDrink.strDrinkThumb}>
+      <h2>${myDrink.strDrink}</h2>
+      <h3>Ingredients:</h3>
+      <ul class="ingredients"></ul>
+      <h3>Instructions:</h3>
+      <p>${myDrink.strInstructions}</p>
+      `;
+        let ingredientsCon = document.querySelector(".ingredients");
+        ingredients.forEach((items) => {
+          let listItem = document.createElement("li");
+          listItem.innerText = items;
+          ingredientsCon.appendChild(listItem);
+        });
+      })
+      .catch(() => {
+        result.innerHTML = `<h3 class="msg">Inconnu au bataillon...<br>&#128526;</h3>`;
+      });
+  }
+};
+window.addEventListener("load", getInfo);
+searchBtn.addEventListener("click", getInfo);

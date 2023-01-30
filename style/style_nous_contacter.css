@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    height: 100%;
 }
 
 .container {
@@ -17,7 +18,7 @@
     background-image: url("../image/background_nous_contacter.jpg");
     background-size: cover;
     height: 100%;
-
+    background-attachment: fixed;
 }
 
 form  {
