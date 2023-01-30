@@ -163,3 +163,62 @@ let getInfo = () => {
 };
 window.addEventListener("load", getInfo);
 searchBtn.addEventListener("click", getInfo);
+
+function getsans_alcool(){
+	fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log("Il semblerait qu'il y est un problème : " +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+        //console.log(data);
+        displayRandomCocktail(data);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+}
+getsans_alcool();
+
+function displaysans_alcool(cocktail){
+	console.log(cocktail.drinks[0]);
+
+	let drinkSection = document.querySelector('#drink-section');
+	drinkSection.innerHTML = '';
+
+	let drinkName = document.createElement('h2');
+	drinkName.innerHTML = cocktail.drinks[0].strDrink;
+
+	drinkSection.appendChild(drinkName);
+
+	let img = document.createElement('img');
+	img.src = cocktail.drinks[0].strDrinkThumb;
+
+	drinkSection.appendChild(img);
+
+	for(let i=1; i<16; i++){
+		console.log();
+
+		if(cocktail.drinks[0][`strIngredient${i}`] == null || cocktail.drinks[0][`strIngredient${i}`] == '' ){
+			break;
+		}
+
+		let ingredient = document.createElement('ons-list-item');
+		ingredient.innerHTML = cocktail.drinks[0][`strMeasure${i}`] + ': ' + cocktail.drinks[0][`strIngredient${i}`];
+
+		drinkSection.appendChild(ingredient);
+	}
+
+	let card = document.createElement('ons-card');
+	card.innerHTML = cocktail.drinks[0].strInstructions;
+
+	drinkSection.appendChild(card);
+
+}

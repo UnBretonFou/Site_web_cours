@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../style/style.css">
+    </head>
+    <body>
+        <!--*******ALPHABET PALETTE*******-->
+        <div class="container-fluid">
+            <div class="row mt-1">
+                <div class="col text-center">
+                    <div class="btn-group btn-group-sm flex-wrap" id="alphabetGroup" role="group">
+                        <button class="btn btn-sm peach-gradient" id="onEntry"
+                                onclick="letterPagination('a')"
+                                type="button">A
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnB" onclick="letterPagination('b')"
+                                type="button">B
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnC" onclick="letterPagination('c')"
+                                type="button">C
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnD" onclick="letterPagination('d')"
+                                type="button">D
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnE" onclick="letterPagination('e')"
+                                type="button">E
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnF" onclick="letterPagination('f')"
+                                type="button">F
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnG" onclick="letterPagination('g')"
+                                type="button">G
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnH" onclick="letterPagination('h')"
+                                type="button">H
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnI" onclick="letterPagination('i')"
+                                type="button">I
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnJ" onclick="letterPagination('j')"
+                                type="button">J
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnK" onclick="letterPagination('k')"
+                                type="button">K
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnL" onclick="letterPagination('l')"
+                                type="button">L
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnM" onclick="letterPagination('m')"
+                                type="button">M
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnN" onclick="letterPagination('n')"
+                                type="button">N
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnO" onclick="letterPagination('o')"
+                                type="button">O
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnP" onclick="letterPagination('p')"
+                                type="button">P
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnQ" onclick="letterPagination('q')"
+                                type="button">Q
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnR" onclick="letterPagination('r')"
+                                type="button">R
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnS" onclick="letterPagination('s')"
+                                type="button">S
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnT" onclick="letterPagination('t')"
+                                type="button">T
+                        </button>
+                        <button class="btn btn-sm peach-gradient disabled" id="btnU"
+                                onclick="letterPagination('u')"
+                                type="button">U
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnV" onclick="letterPagination('v')"
+                                type="button">V
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnW" onclick="letterPagination('w')"
+                                type="button">W
+                        </button>
+                        <button class="btn btn-sm peach-gradient disabled" id="btnX"
+                                onclick="letterPagination('x')"
+                                type="button">X
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnY" onclick="letterPagination('y')"
+                                type="button">Y
+                        </button>
+                        <button class="btn btn-sm peach-gradient" id="btnZ" onclick="letterPagination('z')"
+                                type="button">Z
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--*******RESULTS*******-->
+        <section id="results">
+            <div class="container-fluid">
+                <div class="row align-items-start" id="data"></div>
+            </div>
+        
+        </section>
+
+        <!--*******MODAL DETAILS*******-->
+        <div aria-hidden="true" class="modal fade"
+             id="modalDetails" role="dialog"
+             tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" id="modal-cocktail-header">
+                    </div>
+                    <div class="modal-body" id="modal-cocktail">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-dismiss="modal" type="button"> Close </button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </body>
+</html>
