@@ -21,7 +21,7 @@ li {
   padding-left: 0;
 }
 ol { 
-  list-style: lower-alpha;
+  list-style: none;
 }
 
 .main-container {
@@ -63,7 +63,7 @@ ol {
 .boite-texte {
   font-variant: small-caps;
   width: 75%;
-  padding: 100px;
+  padding: 100px 50px 100px 50px;
   text-align: center;
 }
 
