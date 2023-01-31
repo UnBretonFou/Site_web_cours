@@ -9,9 +9,9 @@ submitButton.addEventListener("click", function() {
   const API_URL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`;
 
   fetch(API_URL)
-    .then(response => response.json())
-    .then(data => {
-      const cocktails = data.drinks;
+    .then(response_3 => response_3.json())
+    .then(data_3 => {
+      const cocktails = data_3.drinks;
       let cocktailsHTML = "";
       cocktailsHTML += `
         <table>

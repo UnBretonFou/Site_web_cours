@@ -86,37 +86,9 @@ function displayRandomCocktail(cocktail){
 	drinkSection.appendChild(card);
 
 }
-
-// /* --- refresh pour un nouveau cocktail --- */
-// ons.ready(function() {
-//   var pullHook = document.getElementById('pull-hook');
-
-//   pullHook.addEventListener('changestate', function(event) {
-//     var message = '';
-
-//     switch (event.state) {
-//       case 'initial':
-//         message = 'Pull to refresh';
-//         getRandomCocktail();
-//         break;
-//       case 'preaction':
-//         message = 'Release';
-//         break;
-//       case 'action':
-//         message = 'Loading...';
-//         break;
-//     }
-
-//     pullHook.innerHTML = message;
-//   });
-
-//   pullHook.onAction = function(done) {
-//     setTimeout(done, 1000);
-//   };
-// });
 /* ===== FIN COKTAIL ALEATOIRE ===== */
 
-
+/* ===== DEBUT COKTAIL PAR SA PREMIERE LETTRE ===== */
 let result = document.getElementById("result");
 let searchBtn = document.getElementById("search-btn");
 let url = "https://thecocktaildb.com/api/json/v1/1/search.php?s=";
@@ -185,7 +157,7 @@ function getsans_alcool(){
         return;
       }
 
-      // Examine the text in the response
+      // Examine la response
       response.json().then(function(data) {
         //console.log(data);
         displayRandomCocktail(data);
@@ -233,3 +205,65 @@ function displaysans_alcool(cocktail){
 	drinkSection.appendChild(card);
 
 }
+/* ===== FIN COKTAIL PAR SA PREMIERE LETTRE ===== */
+
+
+/* ===== DEBUT COKTAIL AVEC ALCOOL ===== */
+function getAlcoholicCocktail(){
+	fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic')
+  .then(
+    function(response_2) {
+      if (response_2.status !== 200) {
+        console.log("Il semblerait qu'il y est un problème : " +
+          response_2.status);
+        return;
+      }
+
+      response_2.json().then(function(data_2) {
+        displayAlcoholicCocktail(data_2);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+}
+getAlcoholicCocktail();
+
+function displayAlcoholicCocktail(cocktail_2){
+	console.log(cocktail_2.drinks[0]);
+
+	let drinkSection_2 = document.querySelector('#drink-section');
+	drinkSection_2.innerHTML = '';
+
+	let drinkName_2 = document.createElement('h2');
+	drinkName_2.innerHTML = cocktail_2.drinks[0].strDrink;
+
+	drinkSection_2.appendChild(drinkName_2);
+
+	let img_2 = document.createElement('img');
+	img_2.src = cocktail.drinks[0].strDrinkThumb;
+
+	drinkSection_2.appendChild(img_2);
+
+	for(let i=1; i<16; i++){
+		console.log();
+
+		if(cocktail.drinks[0][`strIngredient${i}`] == null || cocktail_2.drinks[0][`strIngredient${i}`] == '' ){
+			break;
+		}
+
+		let ingredient_2 = document.createElement('ons-list-item');
+		ingredient_2.innerHTML = cocktail_2.drinks[0][`strMeasure${i}`] + ': ' + cocktail_2.drinks[0][`strIngredient${i}`];
+
+		drinkSection_2.appendChild(ingredient_2);
+	}
+
+	let card_2 = document.createElement('ons-card');
+	card_2.innerHTML = cocktail.drinks[0].strInstructions;
+
+	drinkSection_2.appendChild(card_2);
+
+}
+/* ===== FIN COKTAIL AVEC ALCOOL ===== */
+
