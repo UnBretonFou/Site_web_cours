@@ -5,8 +5,27 @@
   font-family: 'Poppins';
 }
 
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-top: 2%;
+  font-size: 40px;
+}
+h1::first-letter {
+  font-size: 80px;
+  color: rgb(180, 5, 5);
+}
+li {
+  font-size: 30px;
+  word-spacing: 5px;
+  padding-left: 0;
+}
+ol { 
+  list-style: lower-alpha;
+}
+
 .main-container {
-  margin-top: 50px;
+  margin-top: 0;
   width: 100%;
   height: auto;
   display: flex;
@@ -17,9 +36,10 @@
 
 .kit-container {
   align-items: center;
-  margin-left: 100px;
-  margin-top: 150px;
+  margin: 100px;
+  padding: 150px;
 }
+
 .kit-cocktail {
   border-radius: 10%;
   border-width: 50px;
@@ -27,6 +47,11 @@
   margin: auto;
   max-width: 720px;
   max-height: 420px;
+  filter: drop-shadow(5px 5px 5px rgb(180, 5, 5));
+}
+.kit-cocktail:hover {
+  transform: scale(1.01);
+  filter: drop-shadow(5px 5px 5px rgb(555, 0, 0));
 }
 
 .tips-container {
@@ -42,24 +67,25 @@
   text-align: center;
 }
 
-.boite-texte p {
-  color: white;
-  text-align: center;
-  list-style-type: none;
-  font-size: xx-large;
-  font-style: oblique; 
-}
 
-.boite-texte h2 {
-  color: rgb(180, 5, 5);
-  margin-bottom: 1px;
-  margin-top: 0px;
-  font-size: 35px;
-}
 
-h1 {
+/* --- Footer -- */
+footer {
   text-align: center;
+  padding-top: 5%;
+  cursor: pointer;
+}
+.RED-EG:link {
   color: rgb(180, 5, 5);
-  margin-top: 2%;
-  font-size: 50px;
+  text-decoration: none;
+}
+.RED-EG:visited {
+  color: purple;
+  text-decoration: none;
+}
+.RED-EG:hover {
+  cursor: default;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
 }

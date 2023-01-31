@@ -1,3 +1,14 @@
+/* --- cible la troisième lettre d'un ol --- */
+const lis = document.querySelectorAll('ol li');
+
+lis.forEach(li => {
+  const text = li.textContent;
+  const thirdLetter = text[4];
+  const newHTML = text.replace(thirdLetter, `<span style="color: rgb(180, 5, 5); font-size: 50px;">${thirdLetter}</span>`);
+  li.innerHTML = newHTML;
+});
+
+
 /* --- check chargement du fichier --- */
 console.info('js/cocktails.js loaded');
 
